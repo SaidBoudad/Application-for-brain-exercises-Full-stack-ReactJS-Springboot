@@ -13,11 +13,20 @@ Designing:
 The structue of the application is the three-tier design in which :
 Client tier : responsible for the user interface (front-end)
 Application tier : contains all the business logic together with the interfaces to interact with it and the data interfaces for persistance.
-Data store tier : the database , file system ... that persists the application's data.
+Data store tier : the database , file system ... that persists the application's data Back end).
 
 Design of the Application tier :
 Business layer : this will includes the classes that model our domain and business specifics,divided into 2 parts -> Domains(entities) and Applications(services)providing business logic.
-Presentation layer : represented by the Cntroller classes 
+Presentation layer : represented by the Cntroller classes , which will provide the functionality to the web client (REST API implementation).
+Data layer : responsible for persisting our entities in a data storage,include data access object(DAO) classes,which work with objects that map directly to rows in a database, or repository classes.
+
+the main advantages of using this software architecture are all related to achieving loose coupling.
+
+Domain definition :
+Challenge : contains the 2 factors of a multiplication challenge.
+User : identifies the person who will try  to solve a Challenge.
+ChallengeAttempt : represents the attempt from a User to solve the operation from a Challenge.
+
 
 
 
