@@ -18,7 +18,7 @@ public class MultiplicationApplication {
 //		var om = new ObjectMapper();
 //		om.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
 //		return om;
-	}
+//	}
 
 
 }

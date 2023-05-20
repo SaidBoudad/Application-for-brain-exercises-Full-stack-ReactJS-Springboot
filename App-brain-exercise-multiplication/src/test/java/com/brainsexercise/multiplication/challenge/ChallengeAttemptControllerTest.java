@@ -38,16 +38,16 @@ class ChallengeAttemptControllerTest {
         // given
         User user = new User(1L, "said");
         long attemptId = 2L;
-        ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(10, 20, "said", 200);
-        ChallengeAttempt expectedResponse = new ChallengeAttempt(attemptId, user, 10, 20, 200, true);
+        ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(15, 10, "said", 150);
+        ChallengeAttempt expectedResponse = new ChallengeAttempt(attemptId, user, 15, 10, 150, true);
         given(challengeService
                 .verifyAttempt(eq(attemptDTO)))
                 .willReturn(expectedResponse);
 
         // when
-        MockHttpServletResponse response = mvc.perform(
-                        post("/attempts").contentType(MediaType.APPLICATION_JSON)
-                                .content(jsonRequestAttempt.write(attemptDTO).getJson()))
+        MockHttpServletResponse response = mvc
+                .perform(post("/attempts").contentType(MediaType.APPLICATION_JSON)
+                                .content(jsonRequestAttempt.write(attemptDTO).getJson())) //To obtain the JSON representation of an object attemptDTO
                 .andReturn().getResponse();
 
         // then
@@ -61,7 +61,7 @@ class ChallengeAttemptControllerTest {
     @Test
     void postInvalidResult() throws Exception {
         // given an attempt with invalid input data
-        ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(-30, 15, "Said", 1);
+        ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(-30, 1500, "Said", 1);
 
         // when
         MockHttpServletResponse response = mvc.perform(
