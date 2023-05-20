@@ -13,8 +13,7 @@ public class ChallengeServiceTest {
     }
     @Test
     public void checkCorrectAttemptTest(){
-        Boolean said = true;
-        Assumptions.assumingThat(said,()-> System.out.println("said"));
+
         //given
         ChallengeAttemptDTO attemptDTO= new ChallengeAttemptDTO(10,20,"Said_Boudad",200);
         //when

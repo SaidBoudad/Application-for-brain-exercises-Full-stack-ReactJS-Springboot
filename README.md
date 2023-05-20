@@ -16,7 +16,7 @@ Application tier : contains all the business logic together with the interfaces 
 Data store tier : the database , file system ... that persists the application's data Back end).
 
 Design of the Application tier :
-Business layer : this will includes the classes that model our domain and business specifics,divided into 2 parts -> Domains(entities) and Applications(services)providing business logic.
+Business layer : this will includes the classes that model our domain and business specifics,divided into 2 parts -> Domains(entities) and Applications(services)providing business logic .
 Presentation layer : represented by the Cntroller classes , which will provide the functionality to the web client (REST API implementation).
 Data layer : responsible for persisting our entities in a data storage,include data access object(DAO) classes,which work with objects that map directly to rows in a database, or repository classes.
 

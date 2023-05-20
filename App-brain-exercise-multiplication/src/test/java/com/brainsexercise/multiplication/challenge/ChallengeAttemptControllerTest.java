@@ -36,8 +36,8 @@ class ChallengeAttemptControllerTest {
     @Test
     void postValidResult() throws Exception {
         // given
-        User user = new User(1L, "john");
-        long attemptId = 5L;
+        User user = new User(1L, "said");
+        long attemptId = 2L;
         ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(10, 20, "said", 200);
         ChallengeAttempt expectedResponse = new ChallengeAttempt(attemptId, user, 10, 20, 200, true);
         given(challengeService
