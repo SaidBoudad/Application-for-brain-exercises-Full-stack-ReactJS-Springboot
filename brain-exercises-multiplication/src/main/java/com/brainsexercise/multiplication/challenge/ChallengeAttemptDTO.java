@@ -14,7 +14,7 @@ public class ChallengeAttemptDTO {
     int factorA,factorB;
     @NotBlank
     String userAlias;
-    @Positive @Max(9801) //99*99
+    @Positive(message = "How could you possibly get a negative result here? Try again.") @Max(9801) //99*99
     int guess;
 
 }
