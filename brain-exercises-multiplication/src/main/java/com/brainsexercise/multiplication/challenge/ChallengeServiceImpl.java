@@ -9,7 +9,9 @@ public class ChallengeServiceImpl implements ChallengeService{
     @Override
     public ChallengeAttempt verifyAttempt(ChallengeAttemptDTO attemptDTO) {
         //check if the attempt is correct
-        boolean isCorrect = attemptDTO.getGuess() == attemptDTO.getFactorA()*attemptDTO.getFactorB();
+        int correctAttempt = attemptDTO.getFactorA()*attemptDTO.getFactorB();
+        boolean isCorrect = attemptDTO.getGuess() == correctAttempt;
+        if(!isCorrect) System.out.println("the correct response is : "+correctAttempt);
         User user = new User(null,attemptDTO.getUserAlias());
         ChallengeAttempt checkedAttempt= new ChallengeAttempt(null,
                 user,
